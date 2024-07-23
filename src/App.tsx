@@ -15,7 +15,6 @@ function App() {
     return (
         <>
             <SnackbarProvider maxSnack={3}>
-
                     <CssBaseline />
                     <NavBar />
                     <Routes>
@@ -28,12 +27,12 @@ function App() {
                             element={<Discipline />}
                         />
                         <Route
-                            path="/results"
-                            element={<Result />}
-                        />
-                        <Route
                             path="/participants"
                             element={<Participant />}
+                        />
+                        <Route
+                            path="/results"
+                            element={<Result />}
                         />
                         <Route
                             path="/*"

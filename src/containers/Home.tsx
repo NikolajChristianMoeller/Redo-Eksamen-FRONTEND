@@ -1,10 +1,12 @@
-import {Paper} from "@mui/material";
+import { Paper} from "@mui/material";
 
 
 /**
  * Home component.
  */
 function Home() {
+
+
     return (
         <>
             <Paper
@@ -16,7 +18,6 @@ function Home() {
                 }}
             >
               <div>
-
                   Home
               </div>
             </Paper>

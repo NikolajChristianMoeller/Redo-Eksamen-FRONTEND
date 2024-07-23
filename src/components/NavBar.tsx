@@ -76,15 +76,6 @@ export default function Navbar() {
                             <SportsHandballIcon />
                         </IconButton>
                     </Tooltip>
-                    <Tooltip title="Results">
-                        <IconButton
-                            component={Link}
-                            to="/results"
-                            sx={{ color: theme.palette.text.primary }}
-                        >
-                            <SportsScoreIcon />
-                        </IconButton>
-                    </Tooltip>
                     <Tooltip title="Participants">
                         <IconButton
                             component={Link}
@@ -92,6 +83,15 @@ export default function Navbar() {
                             sx={{ color: theme.palette.text.primary }}
                         >
                             <GroupIcon />
+                        </IconButton>
+                    </Tooltip>
+                    <Tooltip title="Results">
+                        <IconButton
+                            component={Link}
+                            to="/results"
+                            sx={{ color: theme.palette.text.primary }}
+                        >
+                            <SportsScoreIcon />
                         </IconButton>
                     </Tooltip>
                 </Box>

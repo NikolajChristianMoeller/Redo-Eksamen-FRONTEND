@@ -1,13 +1,10 @@
 import {useEffect, useState} from "react";
 import Api from "../utils/Api.tsx";
+import type {TDiscipline} from "../types/discipline.type.ts";
 
 export default function useDiscipline() {
 
-    type TDiscipline = {
-        id: number
-        name: string,
-        resultType: string,
-    };
+
 
     const [discipline, setDiscipline] = useState<TDiscipline[]>([]);
 
