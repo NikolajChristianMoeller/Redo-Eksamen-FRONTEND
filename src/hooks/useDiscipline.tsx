@@ -4,8 +4,6 @@ import type {TDiscipline} from "../types/discipline.type.ts";
 
 export default function useDiscipline() {
 
-
-
     const [discipline, setDiscipline] = useState<TDiscipline[]>([]);
 
     useEffect(() => {
@@ -22,7 +20,18 @@ export default function useDiscipline() {
         }
     }
 
+    const createDiscipline = async (discipline: TDiscipline) => {
+        try {
+            const res = await Api.post("disciplines", discipline);
+            setDiscipline((prev) => [...prev, res]);
+        }
+        catch (e) {
+            console.error(e);
+        }
+    }
+
     return {
         discipline,
+        createDiscipline
     }
 }

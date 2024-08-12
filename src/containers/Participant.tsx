@@ -1,4 +1,4 @@
-import CreateParticipantDialog from "../components/CreateParticipantDialog.tsx";
+import CreateParticipantDialog from "../components/participant/CreateParticipantDialog.tsx";
 import useParticipant from "../hooks/useParticipant.tsx";
 import {DataGrid} from "@mui/x-data-grid";
 import {Button, Paper} from "@mui/material";

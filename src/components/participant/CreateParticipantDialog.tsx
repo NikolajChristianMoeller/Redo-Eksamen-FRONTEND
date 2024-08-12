@@ -1,7 +1,7 @@
 import {Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, TextField} from "@mui/material";
-import type {TParticipant} from "../types/participant.type.ts";
+import type {TParticipant} from "../../types/participant.type.ts";
 import {useState} from "react";
-import useDiscipline from "../hooks/useDiscipline.tsx";
+import useDiscipline from "../../hooks/useDiscipline.tsx";
 
 type TCreateParticipantDialogProps = {
     open: boolean,
@@ -11,33 +11,30 @@ type TCreateParticipantDialogProps = {
 }
 
 export default function CreateParticipantDialog({open, handleClose, createParticipant}: TCreateParticipantDialogProps) {
+
     //#region State for dialog
-    const [name, setName] = useState<string>("");
-
-    const [age, setAge] = useState<number>(0);
-
+    const [name, setName] = useState<string>("")
     const [gender, setGender] = useState<string>("")
-
+    const [age, setAge] = useState<number>(0);
     const [club, setClub] = useState<string>("")
-
     const [selectedDiscipline, setSelectedDiscipline] = useState<string>("")
     //#endregion
 
-    const {discipline } = useDiscipline();
+    const {discipline} = useDiscipline();
 
     const CreateNewParticipant = () => {
 
         const newParticipant: TParticipant = {
             id: 0,
             name: name,
-            age: age,
             gender: gender,
+            age: age,
             club: club,
             disciplines: [
                 {
                     id: discipline.find((d) => d.name === selectedDiscipline)?.id || 0,
                     name: selectedDiscipline,
-                    resultType: discipline.find((d) => d.resultType === selectedDiscipline)?.resultType || "",
+                    resultType: discipline.find((d) => d.resultsType === selectedDiscipline)?.resultsType || "",
                 }
             ]
         }
@@ -71,6 +68,15 @@ export default function CreateParticipantDialog({open, handleClose, createPartic
 
                         <Grid item xs={12}>
                             <TextField
+                                label="Gender"
+                                variant="outlined"
+                                fullWidth
+                                onChange={(e) => setGender(e.target.value)}
+                            />
+                        </Grid>
+
+                        <Grid item xs={12}>
+                            <TextField
                                 type="number"
                                 label="Age"
                                 variant="outlined"
@@ -81,21 +87,11 @@ export default function CreateParticipantDialog({open, handleClose, createPartic
 
                         <Grid item xs={12}>
                             <TextField
-                                label="Gender"
-                                variant="outlined"
-                                fullWidth
-                                onChange={(e) => setGender(e.target.value)}
-                            />
-                        </Grid>
-
-                        <Grid item xs={12}>
-                            <TextField
                                 label="Club"
                                 variant="outlined"
                                 fullWidth
                                 onChange={(e) => setClub(e.target.value)}
                             />
-
                         </Grid>
 
                         <Grid item xs={12}>

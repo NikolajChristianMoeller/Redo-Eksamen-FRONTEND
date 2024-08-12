@@ -4,7 +4,6 @@ import type {TParticipant} from "../types/participant.type.ts";
 
 export default function useParticipant() {
 
-
     const [participant, setParticipant] = useState<TParticipant[]>([]);
 
     useEffect(() => {

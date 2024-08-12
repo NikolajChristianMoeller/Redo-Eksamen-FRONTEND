@@ -13,5 +13,4 @@ type TParticipant = {
     ]
 };
 
-
 export type {TParticipant};
